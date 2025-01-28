@@ -1,12 +1,7 @@
 <template>
-  <div>
-    <form action="submit">
-      <input type="text" />
-      <button></button>
-    </form>
-  </div>
+  <div></div>
 </template>
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
