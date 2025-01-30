@@ -1,7 +1,11 @@
 <template>
-  <div></div>
+  <div>
+    <ShopItems message="FrontPage" />
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import ShopItems from './ShopItems.vue'
+</script>
 
 <style scoped></style>
