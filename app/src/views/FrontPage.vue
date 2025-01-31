@@ -1,11 +1,13 @@
 <template>
   <div>
-    <ShopItems message="FrontPage" />
+    <ShopHeader />
+    <ShopItems message="wowza!" />
   </div>
 </template>
 
 <script setup>
-import ShopItems from './ShopItems.vue'
+import ShopItems from '../components/ShopItems.vue'
+import ShopHeader from '../components/ShopHeader.vue'
 </script>
 
 <style scoped></style>

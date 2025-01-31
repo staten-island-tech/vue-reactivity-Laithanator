@@ -1,20 +1,14 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import FrontPage from './views/FrontPage.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">FrontPage</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div>
+    <nav>
+      <RouterLink to="/">FrontPage</RouterLink>
+    </nav>
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
