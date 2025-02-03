@@ -4,9 +4,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <div>
-    <nav>
-      <RouterLink to="/">FrontPage</RouterLink>
-    </nav>
     <RouterView />
   </div>
 </template>
