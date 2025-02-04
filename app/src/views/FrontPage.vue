@@ -4,7 +4,7 @@
       <h1 class="bg-red-500">Hello world!</h1>
     </template>
     <ShopHeader />
-    <ShopItems message="wowza!" />
+    <ShopItems />
     <ShoppingCart />
   </div>
 </template>
