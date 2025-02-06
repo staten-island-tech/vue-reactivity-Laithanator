@@ -6,7 +6,8 @@
     <div
       v-for="item in items"
       :key="item.name"
-      :id="`item-${item.name.replace(/\s+/g, '-').toLowerCase()}`"
+      :id="`item-${item.name}`"
+      ref="itemRefs"
       class="card w-64 bg-white shadow-xl p-4 rounded-xl hover:shadow-2xl transition-shadow"
     >
       <figure class="w-full h-40 flex justify-center items-center">
@@ -17,7 +18,7 @@
         <p class="text-gray-600 text-sm">{{ item.description }}</p>
         <p class="text-lg font-semibold text-green-600 mt-2">${{ item.price }}</p>
         <button
-          @click="toCart(item.name.replace(/\s+/g, '-').toLowerCase())"
+          @click="moveDiv(item.name)"
           class="btn btn-primary bg-green-600 hover:bg-green-700 mt-4 rounded-lg shadow-sm outline outline-2 outline-black"
         >
           Add to Cart
@@ -32,7 +33,18 @@ import { ref } from 'vue'
 import { items } from './itemlist.js'
 const itemsContainer = ref(null)
 const cartContainer = ref(null)
-const toCart = (card) => {}
+const itemRefs = ref({})
+const isMoved = ref(false)
+const moveDiv = (card) => {
+  if (itemRefs.value[card]) {
+    if (isMoved.value) {
+      itemsContainer.value.appendChild(itemRefs[card])
+    } else {
+      cartContainer.value.appendChild(itemRefs[card])
+    }
+    isMoved.value = !isMoved.value
+  }
+}
 </script>
 
 <style scoped></style>
