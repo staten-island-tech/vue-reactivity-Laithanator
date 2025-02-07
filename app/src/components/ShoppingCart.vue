@@ -7,6 +7,13 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useGlobalStore } from '@/stores/globalStore'
+import { ref, computed } from 'vue'
+
+const globalStore = useGlobalStore()
+
+const cartContainer = computed(() => globalStore.cart)
+</script>
 
 <style scoped></style>
