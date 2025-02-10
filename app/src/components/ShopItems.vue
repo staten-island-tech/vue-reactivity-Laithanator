@@ -21,8 +21,10 @@
 import { useGlobalStore } from '@/stores/globalStore.js'
 import { ref } from 'vue'
 import { items } from './itemlist.js'
+defineProps({
+  item: Object,
+})
 const globalStore = useGlobalStore()
-const itemsContainer = ref(null)
 </script>
 
 <style scoped></style>
