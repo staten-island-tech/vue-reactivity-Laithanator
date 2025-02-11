@@ -1,5 +1,7 @@
 <template>
-  <div class="card w-64 bg-white shadow-xl p-4 rounded-xl hover:shadow-2xl transition-shadow">
+  <div
+    class="card w-64 bg-white shadow-xl p-4 rounded-xl hover:shadow-2xl transition-shadow mt-3vh"
+  >
     <figure class="w-full h-40 flex justify-center items-center">
       <img :src="item.imageUrl" :alt="item.alt" class="w-auto h-full object-cover rounded-lg" />
     </figure>
@@ -18,10 +20,9 @@
 </template>
 
 <script setup>
-import { useGlobalStore } from '@/stores/globalStore'
-import { ref, computed } from 'vue'
-
-const globalStore = useGlobalStore()
+defineProps({
+  item: Object,
+})
 </script>
 
 <style scoped></style>

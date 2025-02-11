@@ -7,24 +7,15 @@
       <h2 class="card-title text-lg font-bold text-gray-800">{{ item.name }}</h2>
       <p class="text-gray-600 text-sm">{{ item.description }}</p>
       <p class="text-lg font-semibold text-green-600 mt-2">${{ item.price }}</p>
-      <button
-        @click="globalStore.addToCart(item)"
-        class="btn btn-primary bg-green-600 hover:bg-green-700 mt-4 rounded-lg shadow-sm outline outline-2 outline-black"
-      >
-        Add to Cart
-      </button>
+      <slot></slot>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useGlobalStore } from '@/stores/globalStore.js'
-import { ref } from 'vue'
-import { items } from './itemlist.js'
 defineProps({
   item: Object,
 })
-const globalStore = useGlobalStore()
 </script>
 
 <style scoped></style>
