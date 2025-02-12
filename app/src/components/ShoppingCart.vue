@@ -9,12 +9,8 @@
       <h2 class="card-title text-lg font-bold text-gray-800">{{ item.name }}</h2>
       <p class="text-gray-600 text-sm">{{ item.description }}</p>
       <p class="text-lg font-semibold text-green-600 mt-2">${{ item.price }}</p>
-      <button
-        @click="globalStore.addToShop(item)"
-        class="btn btn-primary bg-green-600 hover:bg-green-700 mt-4 rounded-lg shadow-sm outline outline-2 outline-black"
-      >
-        Remove
-      </button>
+      <p class="text-lg font-semibold text-green-600 mt-2">Quantity: {{ number }}</p>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -22,6 +18,7 @@
 <script setup>
 defineProps({
   item: Object,
+  number: Number,
 })
 </script>
 
